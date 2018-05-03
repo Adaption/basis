@@ -147,9 +147,10 @@
 .filter {
     font-size: 13px;
     display: flex;
-    align-content: center;
-    padding-bottom: 30px;
-    border-bottom: 1px solid whitesmoke;
+    align-items: center;
+    height: 5%;
+    margin-right: 20%;
+    border-bottom: 1px solid lightgray;
 }
 
 .filter > img {
