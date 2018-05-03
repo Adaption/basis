@@ -1,0 +1,67 @@
+.top-logo{
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 79%;
+}
+
+.top-left{
+    width: 80%;
+}
+
+.top-right-icon{
+    width: 5%;
+    text-align: right;
+}
+.top-right-icon a{
+    text-underline-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.top-right-text{
+    width: 5%;
+    font-size: 13px;
+}
+
+.top-right-text a{
+    text-decoration: none;
+    color: black;
+    font-family: Monospaced;
+
+}
+
+.top-right-icon:hover{
+    color: blue;
+}
+
+.top-right-text a:hover{
+    color: blue;
+}
+
+.menu{
+    width: 64%;
+    height: 30px;
+    margin-left: 17%;
+    font-family: Monospaced;
+    font-size: 14px;
+}
+
+.promo-bar{
+    text-align: center;
+    background-color: #8DAACB;
+    height: 37px;
+    width: 100%;
+    color: white;
+    text-decoration: underline white;
+}
+
+.promo-bar div{
+    padding-top: 11px;
+    font-size: 14px;
+}
+
+.top-image{
+    margin-top: 5px;
+    text-align: center;
+}
+
