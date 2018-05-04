@@ -42,7 +42,7 @@
     width: 64%;
     height: 30px;
     margin-left: 17%;
-    font-family: Monospaced;
+    font-family: monospace;
     font-size: 14px;
 }
 
@@ -53,6 +53,7 @@
     width: 100%;
     color: white;
     text-decoration: underline white;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .promo-bar div{
@@ -131,3 +132,86 @@
 .middle-button-last:hover{
     background-color: #45C6CC;
 }
+
+.featured{
+    text-align: center;
+}
+
+.subscribe-text{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    margin-left: 4.5%;
+}
+.subscribe-table{
+    margin-top: 10px;
+    margin-left: 4.5%;
+    width: 91.5%;
+}
+
+.subscribe-left{
+    width: 20%;
+    text-align: left;
+}
+
+.subscribe-right{
+    width: 50%;
+    text-align: right;
+}
+
+.email a{
+    text-decoration: none;
+    color: black;
+}
+
+.subscribe-left div{
+    background-color: black;
+    border-radius: 4px;
+    text-align: center;
+    margin-left: 77px;
+    margin-right:  77px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.promo-bar-end{
+    margin-top: 10px;
+    background-color: #8DAACB;
+    height: 37px;
+    width: 100%;
+    color: white;
+}
+
+.promo-bar-end table{
+    width: 93%;
+    height: 100%;
+    margin-left: 3.5%;
+}
+
+.end-bar-left{
+    font-family: 'Courier New', Courier, monospace;
+    width: 7%;
+    text-align: center;
+    font-size: 12px;
+}
+
+.end-bar-right{
+text-align: right;
+}
+.end-bar-left a{
+    text-decoration: none;
+    color: white;
+}
+
+.sponsors{
+    text-align: center;
+    width: 100%
+}
+
+.sponsors img{
+    width: 14%;
+}
+
+
