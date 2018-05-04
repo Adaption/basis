@@ -1,3 +1,4 @@
+/* homePage */
 .top-logo{
     margin-left: 5%;
     margin-right: 5%;
@@ -214,4 +215,44 @@ text-align: right;
     width: 14%;
 }
 
+/* aboutUs */
+.first-title{
+    font-size: 38px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 1px dashed black;
+    font-weight: 500;
+    margin-left: 5%;
+    margin-top: 12%;
+    width: 87%;
+}
+
+.title{
+    font-size: 38px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-bottom: 1px dashed black;
+    font-weight: 500;
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 87%;
+}
+
+.article{
+    margin-top: 5px;
+    width: 87%;
+    margin-left: 5%;
+}
+
+.article-contact{
+    margin-top: 5px;
+    width: 87%;
+    margin-left: 5%;
+}
+
+.article-contact span{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.article p{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
