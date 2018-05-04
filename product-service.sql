@@ -24,11 +24,11 @@ DROP TABLE IF EXISTS `category`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `categoryName` varchar(45) NOT NULL,
-  `description` varchar(45) DEFAULT NULL,
+  `name` varchar(50) NOT NULL,
+  `description` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
-  UNIQUE KEY `categoryName_UNIQUE` (`categoryName`)
+  UNIQUE KEY `categoryName_UNIQUE` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -38,35 +38,8 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (1,'Mouse','Gaming Mouse'),(2,'Keyboard','Gaming Keyboard');
+INSERT INTO `category` VALUES (1,'Gaming Mouse','Đây là con chuột chuyên game.'),(2,'Gaming Keyboard','Là bàn phím chơi game á chời!');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `image`
---
-
-DROP TABLE IF EXISTS `image`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `image` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `imageId` varchar(45) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `fk_image_product_idx` (`product_id`),
-  CONSTRAINT `fk_image_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `image`
---
-
-LOCK TABLES `image` WRITE;
-/*!40000 ALTER TABLE `image` DISABLE KEYS */;
-/*!40000 ALTER TABLE `image` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -78,16 +51,17 @@ DROP TABLE IF EXISTS `product`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL DEFAULT 'New Product',
+  `name` varchar(50) NOT NULL DEFAULT 'New Product',
   `price` float NOT NULL DEFAULT '0',
   `discount` float NOT NULL DEFAULT '0',
-  `createdDate` datetime DEFAULT NULL,
-  `modifiedDate` datetime DEFAULT NULL,
-  `enabled` int(11) DEFAULT '1',
-  `producer` varchar(45) DEFAULT NULL,
-  `description` varchar(45) DEFAULT NULL,
-  `websiteId` varchar(45) NOT NULL,
+  `created_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `modified_date` datetime DEFAULT NULL,
+  `enabled` int(1) DEFAULT '1',
+  `description` varchar(1000) DEFAULT 'N/A',
+  `attributes` json DEFAULT NULL,
+  `images` json DEFAULT NULL,
   `category_id` int(11) NOT NULL,
+  `website_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_product_category1_idx` (`category_id`),
@@ -101,37 +75,8 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Razer Lancehead',3590000,0.17,'2018-05-02 01:28:10',NULL,1,'Razer','Wireless Gaming Mouse','1',1),(2,'Logitech G903',3990000,0,'2018-05-02 01:30:27',NULL,1,'Logitech','Lightspeed Wireless Gaming Mouse','1',1),(3,'Razer Blackwidow X Chroma',3890000,0,'2018-05-02 01:32:04',NULL,1,'Razer','Razer Green Switch, Chroma Gaming Keyboard','1',2);
+INSERT INTO `product` VALUES (1,'Razer Lancehead',3590000,0.17,'2018-05-02 01:28:10',NULL,1,'Chuột không dây, đẹp nhưng mắc vãi đái.','{\"attributes\": [{\"data\": \"Razer\", \"field\": \"Nhà sản xuất\"}, {\"data\": \"Mới 100% - Full box\", \"field\": \"Tình trạng\"}, {\"data\": \"RGB\", \"field\": \"Đèn LED\"}, {\"data\": \"24 tháng\", \"field\": \"Bảo hành\"}]}','{\"url\": [\"http://product.hstatic.net/1000026716/product/lancew.jpg\", \"http://product.hstatic.net/1000026716/product/gearvn-razer-lancehead-wireless-3.jpg\", \"http://product.hstatic.net/1000026716/product/gearvn-razer-lancehead-wireless-1.jpg\", \"http://product.hstatic.net/1000026716/product/rzr_lancehead_dongle_v01-14x9inch.png\"]}',1,1),(2,'Logitech G903',3990000,0,'2018-05-03 20:29:44',NULL,1,'Con chuột mắc nhứt của hãng Logitech.','{\"attributes\": [{\"data\": \"Logitech\", \"field\": \"Nhà sản xuất\"}, {\"data\": \"Mới 100% - Full box\", \"field\": \"Tình trạng\"}, {\"data\": \"16,8 triệu màu\", \"field\": \"Đèn LED\"}, {\"data\": \"24 tháng (1 đổi 1)\", \"field\": \"Bảo hành\"}]}','{\"url\": [\"http://product.hstatic.net/1000026716/product/gearvn_g903_w_7a90e8a2113a45b09b80d390ae6a903f.jpg\", \"http://product.hstatic.net/1000026716/product/gearvn-g903-2.jpg\", \"http://product.hstatic.net/1000026716/product/gearvn-g903-3.jpg\", \"http://product.hstatic.net/1000026716/product/gearvn-g903-4.jpg\", \"http://product.hstatic.net/1000026716/product/gearvn-g903-5.jpg\"]}',1,1),(3,'Razer Blackwidow X Chroma',3890000,0,'2018-05-04 10:58:08',NULL,1,'Là cái bàn phím cơ có đèn LED đủ màu, switch Razer xanh lá.','{\"attributes\": [{\"data\": \"Razer\", \"field\": \"Nhà sản xuất\"}, {\"data\": \"Mới 100%\", \"field\": \"Tình trạng\"}, {\"data\": \"16,8 triệu màu\", \"field\": \"Đèn LED\"}, {\"data\": \"24 tháng (1 đổi 1)\", \"field\": \"Bảo hành\"}]}','{\"url\": [\"http://hstatic.net/716/1000026716/1/2016/8-30/ra2.png\", \"http://hstatic.net/716/1000026716/1/2016/4-11/razer-blackwidow-x-chroma-2.png\", \"http://hstatic.net/716/1000026716/1/2016/4-11/razer-blackwidow-x-chroma-4.png\"]}',2,1);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `product_info`
---
-
-DROP TABLE IF EXISTS `product_info`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `product_info` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `field` varchar(50) NOT NULL,
-  `data` varchar(50) NOT NULL DEFAULT 'N/A',
-  `product_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `fk_product_info_product_idx` (`product_id`),
-  CONSTRAINT `fk_product_info_product` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `product_info`
---
-
-LOCK TABLES `product_info` WRITE;
-/*!40000 ALTER TABLE `product_info` DISABLE KEYS */;
-INSERT INTO `product_info` VALUES (1,'Nhà sản xuất','Razer',1),(2,'Tình trạng','Mới 100% - Fullbox',1),(3,'Bảo hành','24 tháng',1),(4,'Đèn Led','16,8 triệu màu',1),(5,'Nhà sản xuất','Logitech',2),(6,'Bảo hành','24 tháng (1 đổi 1)',2),(7,'Đèn Led','RGB',2),(8,'Nhà sản xuất','Razer',3),(9,'Tình trạng','Mới 100%',3),(10,'Bảo hành','24 tháng (1 đổi 1)',3),(11,'Switch','Razer Green Switch',3),(12,'Đèn Led','RGB',3);
-/*!40000 ALTER TABLE `product_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -143,4 +88,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-02  1:46:10
+-- Dump completed on 2018-05-04 14:07:37
