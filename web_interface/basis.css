@@ -9,13 +9,20 @@ html, body {
     height: 100%;
 }
 
+.wrapper {
+    display: inline;
+    overflow: hidden;
+}
+
+/* START SIDEBAR */
 
 .side-bar {
+    float: left;
     display: grid;
     width: 250px;
     height: 100%;
     grid-template-columns: auto;
-    grid-template-rows: 70px repeat(2, auto);
+    grid-template-rows: 50px repeat(2, auto);
     background-color: whitesmoke;
 }
 
@@ -34,14 +41,14 @@ html, body {
 .logo {
     grid-column: 1 / 1;
     grid-row: 1 / 1;
-    max-width: 70%;
+    max-width: 60%;
     cursor: pointer;
 }
 
 .preview {
     grid-column: 2 / 2;
     grid-row: 1 / 1;
-    max-width: 32px;
+    max-width: 24px;
     cursor: pointer;
 }
 
@@ -51,8 +58,8 @@ html, body {
     display: grid;
     grid-template-columns: 250px;
     grid-template-rows: repeat(7, 50px);
-    overflow-y: visible;
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .side-bar-body-item, .side-bar-footer-item {
@@ -72,7 +79,8 @@ html, body {
 }
 
 .side-bar-body-item-icon, .side-bar-footer-item-icon {
-    width: 30px;
+    font-size: 30px;
+    text-align: center;
     grid-column: 1 / 1;
     grid-row: 1 / 1;
     margin-left: 30%;
@@ -95,8 +103,8 @@ html, body {
     margin-right: 15%;
 }
 
-.side-bar-body-item-expand > img {
-    width: 15%;
+.side-bar-body-item-expand > i {
+    font-size: 15px;
 }
 
 .side-bar-footer {
@@ -108,6 +116,44 @@ html, body {
     align-self: flex-end;
 }
 
+/* END SIDEBAR */
 
+/* START MAIN */
+
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.main-header {
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 50px 70% repeat(2, auto);
+    grid-template-rows: auto;
+}
+
+.main-header-menu-icon {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    display: none;
+}
+
+.main-header-menu-icon > i {
+    font-size: 24px;
+    transform: translate(50%, 50%);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 780px) {
+    .side-bar {
+        display: none;
+    }
+
+    .main-header-menu-icon {
+        display: inline;
+    }
+}
 
 
