@@ -1,12 +1,12 @@
-package io.basis.productservice;
+package io.basis.jsonqueryhandler;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProductServiceApplication {
+public class JsonQueryHandlerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProductServiceApplication.class, args);
+		SpringApplication.run(JsonQueryHandlerApplication.class, args);
 	}
 }
