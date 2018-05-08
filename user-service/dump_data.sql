@@ -50,7 +50,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `role_has_permission` WRITE;
 /*!40000 ALTER TABLE `role_has_permission` DISABLE KEYS */;
-INSERT INTO `role_has_permission` VALUES (1,1,1,6),(2,1,2,6),(3,1,3,5),(4,2,1,5),(5,2,2,5);
+INSERT INTO `role_has_permission` VALUES (1,1,1),(2,1,2),(3,1,3),(4,2,1),(5,2,2);
 /*!40000 ALTER TABLE `role_has_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 

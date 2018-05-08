@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS `user`.`role_has_permission` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `role_id` INT NOT NULL,
   `permission_id` INT NOT NULL,
-  `value` INT NOT NULL,
+  
   PRIMARY KEY (`id`),
   INDEX `fk_role_has_permission_permission1_idx` (`permission_id` ASC),
   INDEX `fk_role_has_permission_role1_idx` (`role_id` ASC),
