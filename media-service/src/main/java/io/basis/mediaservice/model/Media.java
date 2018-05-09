@@ -12,7 +12,7 @@ public class Media {
     private int mediaId;
     private String name;
     private String link;
-    private float createDate;
+    private Long createDate;
     private Boolean type;
     private Integer websiteId;
 
@@ -48,11 +48,11 @@ public class Media {
 
     @Basic
     @Column(name = "create_date")
-    public float getCreateDate() {
+    public long getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(float createDate) {
+    public void setCreateDate(long createDate) {
         this.createDate = createDate;
     }
 
