@@ -1,7 +1,8 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: lighter;
 }
 
 html, body {
@@ -24,7 +25,7 @@ html, body {
     height: 100%;
     grid-template-columns: auto;
     grid-template-rows: 50px repeat(2, auto);
-    background-color: #072a4c;
+    background: linear-gradient(to bottom, #021B79, #0575E6);
     z-index: 3;
 }
 
@@ -83,7 +84,7 @@ html, body {
 }
 
 .side-bar-item-hover:hover {
-    background-color: #466b90;
+    background-color: rgba(183, 183, 183, 0.2);
 }
 
 .side-bar-body-item:last-child {
@@ -96,7 +97,7 @@ html, body {
     grid-column: 1 / 1;
     grid-row: 1 / 1;
     margin-left: 30%;
-    color: white;
+    color: rgba(211, 211, 211, 0.7);
 }
 
 .side-bar-body-item-text, .side-bar-footer-item-text {
@@ -105,7 +106,7 @@ html, body {
     display: flex;
     align-items: center;
     padding-left: 5%;
-    color: white;
+    color: rgba(211, 211, 211, 0.7);
 }
 
 .side-bar-body-item-expand {
@@ -132,7 +133,15 @@ html, body {
 }
 
 .side-bar-item-active {
-    background-color: #0078ff;
+    background-color: rgba(247, 247, 247, 0.3);
+}
+
+.side-bar-item-active > i {
+    color: white;
+}
+
+.side-bar-item-active > div {
+    color: white;
 }
 
 /* END SIDEBAR */
