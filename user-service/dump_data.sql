@@ -16,15 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Dumping data for table `payment`
---
-
-LOCK TABLES `payment` WRITE;
-/*!40000 ALTER TABLE `payment` DISABLE KEYS */;
-/*!40000 ALTER TABLE `payment` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Dumping data for table `permission`
 --
 
@@ -60,7 +51,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'admin','admin','admin@gmail.com',NULL,'path','admin','','2018-05-05 12:34:58','2018-05-05 12:34:58',1),(2,'user','user','user@gmail.com',NULL,'path','user','','2018-05-05 12:34:58','2018-05-05 12:34:58',2);
+INSERT INTO `user` VALUES (1,'admin','admin','admin@gmail.com',NULL,'path','admin','',1525857624,1525857614,1),(2,'user','user','user@gmail.com',NULL,'path','user','',1525857624,1525857614,2);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
