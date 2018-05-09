@@ -26,7 +26,7 @@ CREATE TABLE `media` (
   `media_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `link` varchar(255) DEFAULT NULL,
-  `create_date` float DEFAULT NULL,
+  `create_date` bigint(20) DEFAULT NULL,
   `type` bit(1) DEFAULT NULL,
   `website_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`media_id`)
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-09 11:16:14
+-- Dump completed on 2018-05-09 12:40:07
