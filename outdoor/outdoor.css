@@ -151,12 +151,12 @@
     grid-template-rows: repeat(3, auto);
 }
 
-.content-card {
+.content-cart {
     text-align: center;
     border: 0.5px solid grey;
 }
 
-.content-card img {
+.content-cart img {
     margin-top: 30px;
     width: 98%;
 }
