@@ -171,11 +171,11 @@
     grid-template-rows: repeat(3, auto);
 }
 
-.content-card {
+.content-cart {
     text-align: center;
 }
 
-.content-card img {
+.content-cart img {
     margin-top: 30px;
     width: 98%;
 }
