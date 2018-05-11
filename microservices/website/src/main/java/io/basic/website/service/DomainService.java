@@ -32,4 +32,12 @@ public class DomainService {
     public void deleteById(int id) {
         this.domainRepository.deleteById(id);
     }
+
+    public List<Domain> findAllByStatus(boolean status) {
+        return this.domainRepository.findAllByStatus(status);
+    }
+
+    public Optional<Domain> findOneByIdAndStatus(int id,boolean status){
+        return this.domainRepository.findByIdAndStatus(id,status);
+    }
 }

@@ -33,4 +33,12 @@ public class WebsiteService {
     public void deleteById(int id) {
         this.websiteRepository.deleteById(id);
     }
+
+    public List<Website> findAllByStatus(boolean status) {
+        return this.websiteRepository.findAllByStatus(status);
+    }
+
+    public Optional<Website> findOneByIdAndStatus(int id, boolean status) {
+        return this.websiteRepository.findByIdAndStatus(id, status);
+    }
 }

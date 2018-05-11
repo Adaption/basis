@@ -54,4 +54,22 @@ public class WebsiteController {
 
         }
     }
+
+    @GetMapping(value = "/websites/{id}/status={status}")
+    public ResponseEntity<Website> getByIdAndStatus(@PathVariable("id") String id, @PathVariable("status") boolean status) {
+        try {
+            return this.websiteService.findOneByIdAndStatus(Integer.parseInt(id), status)
+                    .map(website -> status(OK).body(website))
+                    .orElseGet(status(NOT_FOUND)::build);
+        } catch (NumberFormatException e) {
+            return status(NOT_FOUND).build();
+        }
+    }
+
+    @GetMapping(value = "/websites/status={status}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Website>> getAllByStatus(@PathVariable("status") boolean status) {
+        List<Website> websites = this.websiteService.findAllByStatus(status);
+        return !websites.isEmpty() ? status(OK).body(websites)
+                : status(NO_CONTENT).build();
+    }
 }

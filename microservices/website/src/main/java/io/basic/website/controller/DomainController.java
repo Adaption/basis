@@ -53,4 +53,22 @@ public class DomainController {
 
         }
     }
+
+    @GetMapping(value = "/domains/{id}/status={status}")
+    public ResponseEntity<Domain> getByIdAndStatus(@PathVariable("id") String id, @PathVariable("status") boolean status) {
+        try {
+            return this.domainService.findOneByIdAndStatus(Integer.parseInt(id), status)
+                    .map(domain -> status(OK).body(domain))
+                    .orElseGet(status(NOT_FOUND)::build);
+        } catch (NumberFormatException e) {
+            return status(NOT_FOUND).build();
+        }
+    }
+
+    @GetMapping(value = "/domains/status={status}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List<Domain>> getAllByStatus(@PathVariable("status") boolean status) {
+        List<Domain> domains = this.domainService.findAllByStatus(status);
+        return !domains.isEmpty() ? status(OK).body(domains)
+                : status(NO_CONTENT).build();
+    }
 }
