@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BASIS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="basis.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
+    <script src="basis.js"></script>
+    <script src="../lib/anime.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="side-bar" class="side-bar">
+            <div class="side-bar-header">
+                <div class="logo"></div>
+                <i class="fas fa-times" id="close-sidebar" onclick="closeSidebar(this, 500)"></i>
+            </div>
+            <div class="side-bar-body">
+                <div id="side-bar-item-0" class="side-bar-body-item side-bar-item-hover" onclick="setActiveSidebarItem(0)">
+                    <i class="fas fa-home side-bar-body-item-icon"></i>
+                    <div class="side-bar-body-item-text">
+                        Tổng quan
+                    </div>
+                </div>
+                <div id="side-bar-item-1" class="side-bar-body-item side-bar-item-hover" onclick="setActiveSidebarItem(1)">
+                    <i class="far fa-file-alt side-bar-body-item-icon"></i>
+                    <div class="side-bar-body-item-text">
+                        Đơn hàng
+                    </div>
+                    <div class="side-bar-body-item-expand">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div id="side-bar-item-2" class="side-bar-body-item side-bar-item-hover" onclick="setActiveSidebarItem(2)">
+                    <i class="fas fa-box side-bar-body-item-icon"></i>
+                    <div class="side-bar-body-item-text">
+                        Sản phẩm
+                    </div>
+                    <div class="side-bar-body-item-expand">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div id="side-bar-item-3" class="side-bar-body-item side-bar-item-hover" onclick="setActiveSidebarItem(3)">
+                    <i class="fas fa-user side-bar-body-item-icon"></i>
+                    <div class="side-bar-body-item-text">
+                        Khách hàng
+                    </div>
+                </div>
+                <div id="side-bar-item-4" class="side-bar-body-item side-bar-item-hover" onclick="setActiveSidebarItem(4)">
+                    <i class="fas fa-percent side-bar-body-item-icon"></i>
+                    <div class="side-bar-body-item-text">
+                        Khuyến mãi
+                    </div>
+                </div>
+                <div id="side-bar-item-5" class="side-bar-body-item side-bar-item-hover" onclick="setActiveSidebarItem(5)">
+                    <i class="fas fa-th-large side-bar-body-item-icon"></i>
+                    <div class="side-bar-body-item-text">
+                        Ứng dụng
+                    </div>
+                </div>
+                <div id="side-bar-item-6" class="side-bar-body-item side-bar-item-hover" onclick="setActiveSidebarItem(6)">
+                    <i class="fas fa-desktop side-bar-body-item-icon"></i>
+                    <div class="side-bar-body-item-text">
+                        Website
+                    </div>
+                    <div class="side-bar-body-item-expand">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div id="side-bar-item-7" class="side-bar-body-item side-bar-item-hover" onclick="setActiveSidebarItem(7)">
+                    <i class="fas fa-cog side-bar-body-item-icon"></i>
+                    <div class="side-bar-body-item-text">
+                        Cấu Hình
+                    </div>
+                </div>
+            </div>
+            <div class="side-bar-footer">
+
+            </div>
+        </div>
+        <div class="main">
+            <div onclick="closeSidebar(this, 500)" class="overlay"></div>
+            <div>
+                <div class="main-header">
+                    <div class="main-header-menu-icon">
+                        <i onclick="openSidebar(this, 500)" class="fas fa-bars"></i>
+                    </div>
+                    <div class="main-header-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Nhập từ khoá tìm kiếm....." />
+                    </div>
+                    <div class="main-header-notification">
+                        <i class="far fa-bell"></i>
+                    </div>
+                    <div class="main-header-account">
+
+                    </div>
+                </div>
+                <div class="main-body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
