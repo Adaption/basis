@@ -1,21 +1,20 @@
 package io.basis.productservice.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Objects;
 
 @Entity
+@Table(name = "product", schema = "product_service", catalog = "")
 public class Product {
-
     private int id;
     private String name;
     private double price;
     private double discount;
     private Timestamp createdDate;
     private Timestamp modifiedDate;
-    private Integer enabled;
+    private int status;
+    private int enabled;
     private String description;
     private String attributes;
     private String images;
@@ -83,12 +82,22 @@ public class Product {
     }
 
     @Basic
+    @Column(name = "status")
+    public int getStatus() {
+        return status;
+    }
+
+    public void setStatus(int status) {
+        this.status = status;
+    }
+
+    @Basic
     @Column(name = "enabled")
-    public Integer getEnabled() {
+    public int getEnabled() {
         return enabled;
     }
 
-    public void setEnabled(Integer enabled) {
+    public void setEnabled(int enabled) {
         this.enabled = enabled;
     }
 
@@ -146,44 +155,25 @@ public class Product {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
-        Product product = (Product) o;
-
-        if (id != product.id) return false;
-        if (Double.compare(product.price, price) != 0) return false;
-        if (Double.compare(product.discount, discount) != 0) return false;
-        if (categoryId != product.categoryId) return false;
-        if (websiteId != product.websiteId) return false;
-        if (name != null ? !name.equals(product.name) : product.name != null) return false;
-        if (createdDate != null ? !createdDate.equals(product.createdDate) : product.createdDate != null) return false;
-        if (modifiedDate != null ? !modifiedDate.equals(product.modifiedDate) : product.modifiedDate != null)
-            return false;
-        if (enabled != null ? !enabled.equals(product.enabled) : product.enabled != null) return false;
-        if (description != null ? !description.equals(product.description) : product.description != null) return false;
-        if (attributes != null ? !attributes.equals(product.attributes) : product.attributes != null) return false;
-        if (images != null ? !images.equals(product.images) : product.images != null) return false;
-
-        return true;
+        Product that = (Product) o;
+        return id == that.id &&
+                Double.compare(that.price, price) == 0 &&
+                Double.compare(that.discount, discount) == 0 &&
+                status == that.status &&
+                enabled == that.enabled &&
+                categoryId == that.categoryId &&
+                websiteId == that.websiteId &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(createdDate, that.createdDate) &&
+                Objects.equals(modifiedDate, that.modifiedDate) &&
+                Objects.equals(description, that.description) &&
+                Objects.equals(attributes, that.attributes) &&
+                Objects.equals(images, that.images);
     }
 
     @Override
     public int hashCode() {
-        int result;
-        long temp;
-        result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        temp = Double.doubleToLongBits(price);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(discount);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + (createdDate != null ? createdDate.hashCode() : 0);
-        result = 31 * result + (modifiedDate != null ? modifiedDate.hashCode() : 0);
-        result = 31 * result + (enabled != null ? enabled.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        result = 31 * result + (attributes != null ? attributes.hashCode() : 0);
-        result = 31 * result + (images != null ? images.hashCode() : 0);
-        result = 31 * result + categoryId;
-        result = 31 * result + websiteId;
-        return result;
+
+        return Objects.hash(id, name, price, discount, createdDate, modifiedDate, status, enabled, description, attributes, images, categoryId, websiteId);
     }
 }

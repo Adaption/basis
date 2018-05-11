@@ -1,13 +1,11 @@
 package io.basis.productservice.model;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
+@Table(name = "category", schema = "product_service", catalog = "")
 public class Category {
-
     private int id;
     private String name;
     private String description;
@@ -46,19 +44,15 @@ public class Category {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
-        Category category = (Category) o;
-
-        if (id != category.id) return false;
-        if (name != null ? !name.equals(category.name) : category.name != null) return false;
-        return description != null ? description.equals(category.description) : category.description == null;
+        Category that = (Category) o;
+        return id == that.id &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(description, that.description);
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (description != null ? description.hashCode() : 0);
-        return result;
+
+        return Objects.hash(id, name, description);
     }
 }
