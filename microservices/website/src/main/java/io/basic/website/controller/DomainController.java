@@ -28,7 +28,7 @@ public class DomainController {
                     .map(businessType -> status(OK).body(businessType))
                     .orElseGet(status(NOT_FOUND)::build);
         } catch (NumberFormatException e) {
-            return status(NOT_FOUND).build();
+            return status(BAD_REQUEST).build();
         }
     }
 
@@ -61,7 +61,7 @@ public class DomainController {
                     .map(domain -> status(OK).body(domain))
                     .orElseGet(status(NOT_FOUND)::build);
         } catch (NumberFormatException e) {
-            return status(NOT_FOUND).build();
+            return status(BAD_REQUEST).build();
         }
     }
 

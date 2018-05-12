@@ -29,7 +29,7 @@ public class PageController {
                     .map(page -> status(OK).body(page))
                     .orElseGet(status(NOT_FOUND)::build);
         } catch (NumberFormatException e) {
-            return status(NOT_FOUND).build();
+            return status(BAD_REQUEST).build();
         }
     }
 

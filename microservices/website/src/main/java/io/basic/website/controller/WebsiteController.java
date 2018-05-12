@@ -29,7 +29,7 @@ public class WebsiteController {
                     .map(website -> status(OK).body(website))
                     .orElseGet(status(NOT_FOUND)::build);
         } catch (NumberFormatException e) {
-            return status(NOT_FOUND).build();
+            return status(BAD_REQUEST).build();
         }
     }
 
@@ -62,7 +62,7 @@ public class WebsiteController {
                     .map(website -> status(OK).body(website))
                     .orElseGet(status(NOT_FOUND)::build);
         } catch (NumberFormatException e) {
-            return status(NOT_FOUND).build();
+            return status(BAD_REQUEST).build();
         }
     }
 
