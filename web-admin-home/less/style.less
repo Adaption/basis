@@ -1,0 +1,29 @@
+//variables
+@page-width:100%;
+@logo-height:60px;
+
+
+
+//constructors
+.page-middling(@margin-two-sides){
+    width: @page-width - (@margin-two-sides*2);
+    margin-left: @margin-two-sides;
+    margin-right:@margin-two-sides;
+}
+
+.nav-orientation(@position){
+    text-align: @position;
+}
+
+
+
+
+//classNames
+.top-nav{
+    background-color: red;
+    .page-middling(7%);
+}
+
+.logo{
+    height: @logo-height;
+}
