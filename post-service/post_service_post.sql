@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.22, for Linux (x86_64)
 --
 -- Host: localhost    Database: post_service
 -- ------------------------------------------------------
--- Server version	5.7.21-log
+-- Server version	5.7.22
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -26,12 +26,12 @@ CREATE TABLE `post` (
   `post_id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
   `content` longtext,
-  `create_date` datetime DEFAULT NULL,
-  `update_date` datetime DEFAULT NULL,
+  `create_date` bigint(20) DEFAULT NULL,
+  `update_date` bigint(20) DEFAULT NULL,
   `thumbnail_post` longtext,
   `website_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
-INSERT INTO `post` VALUES (1,'hi','hello','2018-01-01 00:00:00','2018-01-13 00:00:00','google.com',1),(2,'asd','asd','2018-01-01 00:00:00','2018-01-13 00:00:00','google.com',2);
+INSERT INTO `post` VALUES (1,'hi','hello',1525968021460,1525968021460,'google.com',1),(2,'asd','asd',20180101000000,20180113000000,'google.com',2);
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-02  7:09:59
+-- Dump completed on 2018-05-10 23:06:05

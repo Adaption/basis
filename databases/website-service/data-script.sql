@@ -41,7 +41,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `page` WRITE;
 /*!40000 ALTER TABLE `page` DISABLE KEYS */;
-INSERT INTO `page` VALUES (1,'page for sample 1','2018-05-03 19:43:59','pageSample1','',1),(2,'page for sample 2','2018-05-03 19:44:15','pageSample2','',2);
+INSERT INTO `page` VALUES (1,'page for sample 1',1525857624,'pageSample1','',1),(2,'page for sample 2',1525857624,'pageSample2','',2);
 /*!40000 ALTER TABLE `page` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -51,7 +51,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `website` WRITE;
 /*!40000 ALTER TABLE `website` DISABLE KEYS */;
-INSERT INTO `website` VALUES (1,'website sample 1','2018-05-03 12:36:43','sample1@gmail.com','234234','sample1','sample1',NULL,NULL,'',1,1),(2,'website sample 2','2018-05-03 19:42:44','sample2@gmail.com','325325325','sample2','sample2',NULL,NULL,'',2,1);
+INSERT INTO `website` VALUES (1,'website sample 1',1525857624,'sample1@gmail.com','234234','sample1','sample1',NULL,NULL,'',1,1),(2,'website sample 2',1525857624,'sample2@gmail.com','325325325','sample2','sample2',NULL,NULL,'',2,1);
 /*!40000 ALTER TABLE `website` ENABLE KEYS */;
 UNLOCK TABLES;
 
