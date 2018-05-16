@@ -1,8 +1,47 @@
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwiPHA.ttf) format('truetype');
+}
 .top-nav {
+  font-family: 'Lato';
   background-color: red;
+  margin-top: 10px;
   width: 86%;
   margin-left: 7%;
   margin-right: 7%;
+  display: grid;
+  grid-template-columns: repeat(9, auto);
+  grid-template-rows: auto;
+}
+.top-nav div {
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+}
+.top-nav div:nth-child(6) {
+  margin-right: 190px;
+}
+.top-nav div:nth-child(8) {
+  margin-right: 10px;
+}
+.top-nav div:nth-child(9) {
+  text-align: center;
+}
+.left {
+  font-size: 14px;
+  cursor: pointer;
+}
+.left:hover {
+  color: #3BA4FF;
+}
+.right {
+  font-size: 13px;
+  cursor: pointer;
+}
+.right:hover {
+  color: #3BA4FF;
 }
 .logo {
   height: 60px;

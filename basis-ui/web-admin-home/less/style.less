@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:700');
 //variables
 @page-width:100%;
 @logo-height:60px;
+@font:'Lato';
+@hover-color:#3BA4FF;
+@font-left-size: 14px;
+@font-right-size:13px;
 
 
 
@@ -20,9 +25,48 @@
 
 //classNames
 .top-nav{
+    font-family: @font;
     background-color: red;
+    // display: flex;
+    // align-items: center;
+    margin-top:10px;
     .page-middling(7%);
+    display: grid;
+    grid-template-columns: repeat(9, auto);
+    grid-template-rows: auto;
 }
+
+.top-nav div{
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.top-nav div:nth-child(6){
+    margin-right: 190px;
+}
+.top-nav div:nth-child(8){
+    margin-right: 10px;
+}
+.top-nav div:nth-child(9){
+    text-align: center;
+}
+
+.left{
+    font-size: @font-left-size;
+    cursor: pointer;
+}
+.left:hover{
+    color: @hover-color;
+}
+.right{
+    font-size: @font-right-size;
+    cursor: pointer;
+}
+.right:hover{
+    color: @hover-color;
+}
+
 
 .logo{
     height: @logo-height;
