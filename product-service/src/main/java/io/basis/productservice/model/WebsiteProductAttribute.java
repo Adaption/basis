@@ -13,6 +13,7 @@ import java.util.Objects;
 public class WebsiteProductAttribute {
     private int id;
     private String attributeName;
+    private int websiteId;
 
     @Id
     @Column(name = "id")
@@ -34,6 +35,16 @@ public class WebsiteProductAttribute {
         this.attributeName = attributeName;
     }
 
+    @Basic
+    @Column(name = "website_id")
+    public int getWebsiteId() {
+        return websiteId;
+    }
+
+    public void setWebsiteId(int websiteId) {
+        this.websiteId = websiteId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -46,7 +57,7 @@ public class WebsiteProductAttribute {
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, attributeName);
+        return Objects.hash(id, attributeName, websiteId);
     }
 
     public String[] convertJsonToArray() throws IOException {
