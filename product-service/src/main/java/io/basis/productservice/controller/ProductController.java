@@ -6,6 +6,7 @@ import io.basis.productservice.service.ProductService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -82,5 +83,10 @@ public class ProductController {
         } catch (ProductNotFoundException e) {
             return ResponseEntity.status(BAD_REQUEST).build();
         }
+    }
+
+    @PostMapping("/import")
+    public void importProducts(@RequestParam("file") MultipartFile excel) {
+        this.productService.importProducts(excel);
     }
 }

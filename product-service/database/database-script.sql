@@ -90,9 +90,10 @@ DROP TABLE IF EXISTS `website_product_attribute`;
 CREATE TABLE `website_product_attribute` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `attribute_name` json NOT NULL,
+  `website_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,7 +102,7 @@ CREATE TABLE `website_product_attribute` (
 
 LOCK TABLES `website_product_attribute` WRITE;
 /*!40000 ALTER TABLE `website_product_attribute` DISABLE KEYS */;
-INSERT INTO `website_product_attribute` VALUES (1,'[\"Nhà sản xuất\", \"Tình trạng\", \"Đèn LED\", \"Bảo hành\"]');
+INSERT INTO `website_product_attribute` VALUES (1,'[\"Nhà sản xuất\", \"Tình trạng\", \"Đèn LED\", \"Bảo hành\"]',1);
 /*!40000 ALTER TABLE `website_product_attribute` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -114,4 +115,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-09 13:04:51
+-- Dump completed on 2018-05-19 10:16:41
