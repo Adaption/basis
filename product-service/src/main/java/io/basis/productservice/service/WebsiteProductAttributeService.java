@@ -5,6 +5,8 @@ import io.basis.productservice.model.WebsiteProductAttribute;
 import io.basis.productservice.repository.WebsiteProductAttributeRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,6 +40,19 @@ public class WebsiteProductAttributeService {
     public WebsiteProductAttribute create(WebsiteProductAttribute websiteProductAttribute) {
         websiteProductAttributeRepository.save(websiteProductAttribute);
         websiteProductAttributeRepository.flush();
+        return websiteProductAttribute;
+    }
+
+    public WebsiteProductAttribute createDefault(int websiteId) {
+        WebsiteProductAttribute websiteProductAttribute = new WebsiteProductAttribute();
+        List<String> attributes = Arrays.asList("Nhà sản xuất",
+                "Tình trạng",
+                "Đèn LED",
+                "Bảo hành");
+        websiteProductAttribute.setAttributeName(attributes.toString());
+        websiteProductAttribute.setWebsiteId(websiteId);
+
+        websiteProductAttributeRepository.saveAndFlush(websiteProductAttribute);
         return websiteProductAttribute;
     }
 }

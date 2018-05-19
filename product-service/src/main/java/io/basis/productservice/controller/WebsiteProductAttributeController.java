@@ -47,4 +47,9 @@ public class WebsiteProductAttributeController {
     public ResponseEntity<WebsiteProductAttribute> create(@RequestBody WebsiteProductAttribute websiteProductAttribute) {
         return status(CREATED).body(websiteProductAttributeService.create(websiteProductAttribute));
     }
+
+    @PostMapping(value = "/website-product-attributes", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<WebsiteProductAttribute> createDefault(@PathVariable("website_id") int websiteId) {
+        return status(CREATED).body(websiteProductAttributeService.createDefault(websiteId));
+    }
 }
