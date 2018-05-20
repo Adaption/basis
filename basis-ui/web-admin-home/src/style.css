@@ -1,12 +1,12 @@
 @font-face {
-  font-family: 'Lato';
+  font-family: 'Roboto';
   font-style: normal;
-  font-weight: 700;
-  src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v14/S6u9w4BMUTPHh6UVSwiPHA.ttf) format('truetype');
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
 }
 .top-nav {
-  font-family: 'Lato';
-  background-color: red;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
   margin-top: 10px;
   width: 86%;
   margin-left: 7%;
@@ -18,20 +18,14 @@
 .top-nav div {
   display: flex;
   align-items: center;
-  border: 1px solid black;
 }
 .top-nav div:nth-child(6) {
   margin-right: 190px;
 }
-.top-nav div:nth-child(8) {
-  margin-right: 10px;
-}
-.top-nav div:nth-child(9) {
-  text-align: center;
-}
 .left {
   font-size: 14px;
   cursor: pointer;
+  transition: all 0.3s;
 }
 .left:hover {
   color: #3BA4FF;
@@ -39,10 +33,24 @@
 .right {
   font-size: 13px;
   cursor: pointer;
+  transition: all 0.3s;
 }
 .right:hover {
   color: #3BA4FF;
 }
 .logo {
   height: 60px;
+}
+.right span {
+  text-align: center;
+  padding: 10px 30px;
+  color: #0FC6A3;
+  border: 1px solid #0FC6A3;
+  border-radius: 24px;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+.right span:hover {
+  background-color: #0FC6A3;
+  color: #fff;
 }

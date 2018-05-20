@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:700');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 //variables
 @page-width:100%;
 @logo-height:60px;
-@font:'Lato';
+@font:'Roboto', sans-serif;
 @hover-color:#3BA4FF;
 @font-left-size: 14px;
 @font-right-size:13px;
@@ -19,6 +19,17 @@
 .nav-orientation(@position){
     text-align: @position;
 }
+.btn(@color, @radius){
+    color: @color;
+    border: 1px solid @color;
+    border-radius: @radius;
+    transition: all 0.3s;
+
+    &:hover{
+        background-color: @color;
+        color: #fff;
+    }
+}
 
 
 
@@ -26,7 +37,8 @@
 //classNames
 .top-nav{
     font-family: @font;
-    background-color: red;
+    font-weight: 700;
+    //background-color: red;
     // display: flex;
     // align-items: center;
     margin-top:10px;
@@ -39,22 +51,17 @@
 .top-nav div{
     display: flex;
     align-items: center;
-    border: 1px solid black;
+    //border: 1px solid black;
 }
 
 .top-nav div:nth-child(6){
     margin-right: 190px;
 }
-.top-nav div:nth-child(8){
-    margin-right: 10px;
-}
-.top-nav div:nth-child(9){
-    text-align: center;
-}
 
 .left{
     font-size: @font-left-size;
     cursor: pointer;
+    transition: all 0.3s;
 }
 .left:hover{
     color: @hover-color;
@@ -62,12 +69,19 @@
 .right{
     font-size: @font-right-size;
     cursor: pointer;
+    transition: all 0.3s;
 }
 .right:hover{
     color: @hover-color;
 }
 
-
 .logo{
     height: @logo-height;
+}
+
+.right span{
+    text-align: center;
+    padding: 10px 30px;
+    .btn(#0FC6A3,24px);
+    font-weight: bold;
 }

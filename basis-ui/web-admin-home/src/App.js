@@ -41,7 +41,7 @@ class Topbar extends Component{
         <div className='right'>Trợ giúp</div>
         <div className='right'>Đăng nhập</div>
         <div className='right'>
-            Dùng thử
+            <span>Dùng thử</span>
         </div>
       </div>
     );
