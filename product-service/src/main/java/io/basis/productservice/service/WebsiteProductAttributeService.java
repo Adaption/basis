@@ -1,5 +1,7 @@
 package io.basis.productservice.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.basis.productservice.custom.exception.WebsiteProductAttributeNotFoundException;
 import io.basis.productservice.model.WebsiteProductAttribute;
 import io.basis.productservice.repository.WebsiteProductAttributeRepository;
@@ -49,7 +51,12 @@ public class WebsiteProductAttributeService {
                 "Tình trạng",
                 "Đèn LED",
                 "Bảo hành");
-        websiteProductAttribute.setAttributeName(attributes.toString());
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            websiteProductAttribute.setAttributeName(objectMapper.writeValueAsString(attributes));
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
         websiteProductAttribute.setWebsiteId(websiteId);
 
         websiteProductAttributeRepository.saveAndFlush(websiteProductAttribute);

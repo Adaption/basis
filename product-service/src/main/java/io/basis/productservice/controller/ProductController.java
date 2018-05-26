@@ -39,9 +39,14 @@ public class ProductController {
         return !products.isEmpty() ? status(OK).body(products) : status(NO_CONTENT).build();
     }
 
-    @PostMapping(value = "/products", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/product", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Product> create(@RequestBody Product product) {
         return status(CREATED).body(productService.create(product));
+    }
+
+    @PostMapping(value = "/products", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity createDefault(@RequestParam("website_id") int websiteId, @RequestParam("category_id") int category_id) {
+        return status(CREATED).body(productService.createSampleProduct(websiteId, category_id));
     }
 
     @GetMapping("/products/{id}")

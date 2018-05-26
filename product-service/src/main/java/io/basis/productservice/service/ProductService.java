@@ -1,5 +1,7 @@
 package io.basis.productservice.service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.basis.productservice.custom.exception.ProductNotFoundException;
 import io.basis.productservice.model.Product;
 import io.basis.productservice.repository.ProductRepository;
@@ -38,6 +40,49 @@ public class ProductService {
     public Product create(Product product) {
         productRepository.save(product);
         productRepository.flush();
+        return product;
+    }
+
+    public Product createSampleProduct(int websiteId, int categoryId){
+        List<Product>products= new ArrayList<>();
+
+        Product product = new Product();
+        for (int i = 0; i < 5; i++) {
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+            ObjectMapper objectMapper = new ObjectMapper();
+
+            product.setName("Razer Lancehead");
+            product.setPrice(3590000);
+            product.setDiscount(0.15);
+            product.setCreatedDate(timestamp);
+            product.setModifiedDate(null);
+            product.setStatus(1);
+            product.setEnabled(1);
+            product.setDescription("Chuột không dây, đẹp nhưng mắc vãi đái.");
+            Map<String, String> attributes = new HashMap<>();
+            attributes.put("Đèn LED", "RGB");
+            attributes.put("Bảo hành", "24 tháng");
+            attributes.put("Tình trạng", "Mới 100% - Full box");
+            attributes.put("Nhà sản xuất", "Razer");
+            try {
+                product.setAttributes(objectMapper.writeValueAsString(attributes));
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+            List<String> images = Arrays.asList("http://hstatic.net/716/1000026716/1/2016/8-30/ra2.png",
+                    "http://hstatic.net/716/1000026716/1/2016/4-11/razer-blackwidow-x-chroma-2.png",
+                    "http://hstatic.net/716/1000026716/1/2016/4-11/razer-blackwidow-x-chroma-4.png");
+            try {
+                product.setImages(objectMapper.writeValueAsString(images));
+            } catch (JsonProcessingException e) {
+                e.printStackTrace();
+            }
+
+            product.setCategoryId(categoryId);
+            product.setWebsiteId(websiteId);
+
+            productRepository.save(product);
+        }
         return product;
     }
 

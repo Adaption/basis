@@ -22,6 +22,7 @@ public class Product {
     private int websiteId;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     public int getId() {
         return id;
@@ -169,6 +170,24 @@ public class Product {
                 Objects.equals(description, that.description) &&
                 Objects.equals(attributes, that.attributes) &&
                 Objects.equals(images, that.images);
+    }
+
+    public Product(String name, double price, double discount, Timestamp createdDate, Timestamp modifiedDate, int status, int enabled, String description, String attributes, String images, int categoryId, int websiteId) {
+        this.name = name;
+        this.price = price;
+        this.discount = discount;
+        this.createdDate = createdDate;
+        this.modifiedDate = modifiedDate;
+        this.status = status;
+        this.enabled = enabled;
+        this.description = description;
+        this.attributes = attributes;
+        this.images = images;
+        this.categoryId = categoryId;
+        this.websiteId = websiteId;
+    }
+
+    public Product() {
     }
 
     @Override
