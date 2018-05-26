@@ -43,11 +43,12 @@ public class ProductService {
         return product;
     }
 
-    public Product createSampleProduct(int websiteId, int categoryId){
+    public List<Product> createSampleProduct(int websiteId, int categoryId){
         List<Product>products= new ArrayList<>();
 
-        Product product = new Product();
+
         for (int i = 0; i < 5; i++) {
+            Product product = new Product();
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             ObjectMapper objectMapper = new ObjectMapper();
 
@@ -80,10 +81,10 @@ public class ProductService {
 
             product.setCategoryId(categoryId);
             product.setWebsiteId(websiteId);
-
-            productRepository.save(product);
+            products.add(product);
         }
-        return product;
+        productRepository.saveAll(products);
+        return products;
     }
 
     public List<Product> findByCategoryId(int categoryId) {
