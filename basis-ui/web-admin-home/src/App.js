@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import logo from './img/logo_3.png';
 import './style.css';
+import scrollIcon from './icon/angle-down.svg';
 
 
-class Topbar extends Component{
-  render(){
-    return(
+class Topbar extends Component {
+  render() {
+    return (
       // <table className='top-nav'>
       //   <tbody>
       //     <tr>
@@ -28,10 +29,10 @@ class Topbar extends Component{
       //     </tr>
       //   </tbody>
       // </table>
-      
+
       <div className='top-nav'>
         <div>
-          <img className='logo' src={logo}/>
+          <img className='logo' src={logo} />
         </div>
         <div className='left'>POS</div>
         <div className='left'>WEB</div>
@@ -41,19 +42,69 @@ class Topbar extends Component{
         <div className='right'>Trợ giúp</div>
         <div className='right'>Đăng nhập</div>
         <div className='right'>
-            <span>Dùng thử</span>
+          <span>Dùng thử</span>
         </div>
       </div>
     );
   }
 }
 
+class Topdescription extends Component {
+  render() {
+    return (
+      <div className='desc'>
+        Nền tảng quản lý và bán hàng đa kênh
+        được sử dụng nhiều nhất Việt Nam
+        <div></div>
+        <p>
+          +<strong>43,000</strong> doanh nghiệp và chủ shop đã chọn để bán hàng từ Online đến Offline
+        </p>
+      </div>
+    );
+  }
+}
 
+class Topbuttontrial extends Component {
+  render() {
+    return (
+      <div className='button-trial-top'>
+        <div className="button-trial-overlay"></div>
+        <span>Dùng thử miễn phí</span>
+      </div>
+    );
+  }
+}
+class Topbackground extends Component {
+  render() {
+    return (
+      <div className='top-background'>
+      </div>
+    );
+  }
+}
+
+class Buttondownscroll extends Component {
+  render() {
+    return (
+      <div className="scrolldown-arrow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+          <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+        </svg>
+      </div>
+    );
+  }
+}
 
 class Homepage extends Component {
   render() {
     return (
-     <Topbar/>
+      <div class="body">
+        <Topbar />
+        <Topdescription />
+        <Topbuttontrial />
+        <Topbackground />
+        <Buttondownscroll />
+      </div>
     );
   }
 }

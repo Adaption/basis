@@ -4,6 +4,10 @@
   font-weight: 400;
   src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'HelveticaWorld';
+  src: url('../src/HelveticaWorld-Regular.ttf');
+}
 .top-nav {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
@@ -41,16 +45,99 @@
 .logo {
   height: 60px;
 }
-.right span {
+.right > span {
   text-align: center;
   padding: 10px 30px;
-  color: #0FC6A3;
-  border: 1px solid #0FC6A3;
+  color: #6184C0;
+  border: 1px solid #6184C0;
   border-radius: 24px;
-  transition: all 0.3s;
+  transition: all 0.5s;
   font-weight: bold;
 }
-.right span:hover {
-  background-color: #0FC6A3;
+.right > span:hover {
+  background-color: #6184C0;
   color: #fff;
+}
+.desc {
+  line-height: 58px;
+  margin-top: 5%;
+  width: 64%;
+  margin-left: 18%;
+  margin-right: 18%;
+  font-size: 46px;
+  text-align: center;
+  font-family: 'HelveticaWorld';
+}
+.desc > div {
+  border-bottom: 3px solid #6184C0;
+  width: 14%;
+  margin-left: 43%;
+  margin-right: 43%;
+  margin-top: 3%;
+  transition: all 0.2s;
+}
+.desc:hover > div {
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+.desc > p {
+  font-size: 22px;
+  color: #3a3a3a;
+  margin-bottom: 30px;
+}
+.button-trial-top {
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  width: 24%;
+  margin-left: 38%;
+  margin-right: 38%;
+  border-radius: 5000px;
+  color: #fff;
+  border: 1px solid #7f9ccc;
+  background: -webkit-linear-gradient(left, #7f9ccc, #6184c0);
+  background: -moz-linear-gradient(left, #7f9ccc, #6184c0);
+  background: -ms-linear-gradient(left, #7f9ccc, #6184c0);
+  background: -o-linear-gradient(left, #7f9ccc, #6184c0);
+  font-size: 28px;
+  height: 74px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-trial-overlay {
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  border-radius: 5000px;
+  background: rgba(0, 0, 0, 0.1);
+  transition: width .4s;
+}
+.button-trial-top > span {
+  z-index: 99;
+}
+.button-trial-top:hover .button-trial-overlay {
+  width: 100%;
+}
+.top-background {
+  z-index: -1;
+  position: absolute;
+  top: 46%;
+  width: 87%;
+  margin-left: 6.5%;
+  margin-right: 6.5%;
+  height: 600px;
+  background-image: url('../src/img/email-marketing-banner.png');
+}
+.scrolldown-arrow {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 30%;
+  text-align: center;
+}
+.scrolldown-arrow > svg {
+  width: 40px;
+  fill: #6184C0;
 }

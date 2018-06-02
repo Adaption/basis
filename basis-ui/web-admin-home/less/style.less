@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
+
 //variables
 @page-width:100%;
 @logo-height:60px;
@@ -7,6 +8,10 @@
 @font-left-size: 14px;
 @font-right-size:13px;
 
+@font-face {
+    font-family: 'HelveticaWorld';
+    src: url('../src/HelveticaWorld-Regular.ttf');
+}
 
 
 //constructors
@@ -23,18 +28,36 @@
     color: @color;
     border: 1px solid @color;
     border-radius: @radius;
-    transition: all 0.3s;
+    transition: all 0.5s;
 
     &:hover{
         background-color: @color;
         color: #fff;
     }
 }
+.gradient(@startColor, @endColor){
+    border: 1px solid @startColor;
+    background: -webkit-linear-gradient(left, @startColor, @endColor);
+	background: -moz-linear-gradient(left, @startColor, @endColor);
+	background: -ms-linear-gradient(left, @startColor, @endColor);
+	background: -o-linear-gradient(left, @startColor, @endColor);
+}
+
+.big-btn( @radius){
+    border-radius: @radius;
+    color: #fff;
+    // transition: all .5s;
+    // transition-timing-function: ease;
+    // &:hover{
+    //     background-color: red;
+    // }
+}
 
 
 
 
 //classNames
+
 .top-nav{
     font-family: @font;
     font-weight: 700;
@@ -79,9 +102,86 @@
     height: @logo-height;
 }
 
-.right span{
+.right > span{
     text-align: center;
     padding: 10px 30px;
-    .btn(#0FC6A3,24px);
+    .btn(#6184C0,24px);
     font-weight: bold;
+}
+
+
+.desc{
+    line-height: 58px;
+    margin-top: 5%;
+    .page-middling(18%);
+    font-size: 46px;
+    text-align: center;
+    font-family: 'HelveticaWorld';
+    
+}
+
+.desc > div{
+    border-bottom: 3px solid #6184C0;
+    .page-middling(43%);
+    margin-top: 3%;
+    transition: all 0.2s;
+    
+}
+.desc:hover > div{
+    .page-middling(40%);
+}
+
+.desc > p{
+    font-size: 22px;
+    color: #3a3a3a;
+    margin-bottom: 30px;
+}
+
+.button-trial-top{
+    font-family: @font;
+    cursor: pointer;
+    .page-middling(38%);
+    .big-btn(5000px);
+    .gradient(#7f9ccc, #6184c0);
+    font-size: 28px;
+    height: 74px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-trial-overlay {
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    border-radius: 5000px;
+    background: rgba(0, 0, 0, 0.1);
+    transition: width .4s;
+}
+.button-trial-top > span{
+    z-index: 99;
+}
+
+.button-trial-top:hover .button-trial-overlay{
+    width: 100%;
+}
+
+.top-background{
+    z-index: -1;
+    position: absolute;
+    top: 46%;
+    .page-middling(6.5%);
+    height: 600px;
+    background-image: url('../src/img/email-marketing-banner.png');
+}
+.scrolldown-arrow{
+    .page-middling(30%);
+    margin-top: 30%;
+    text-align: center;
+}
+
+.scrolldown-arrow > svg{
+    width: 40px;
+    fill: #6184C0;
 }
