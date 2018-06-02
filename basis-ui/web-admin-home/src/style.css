@@ -8,6 +8,10 @@
   font-family: 'HelveticaWorld';
   src: url('../src/HelveticaWorld-Regular.ttf');
 }
+.navigation-inside {
+  display: flex;
+  align-items: center;
+}
 .top-nav {
   font-family: 'Roboto', sans-serif;
   font-weight: 700;
@@ -134,10 +138,44 @@
   width: 40%;
   margin-left: 30%;
   margin-right: 30%;
-  margin-top: 30%;
+  margin-top: 33%;
   text-align: center;
 }
 .scrolldown-arrow > svg {
   width: 40px;
   fill: #6184C0;
+  cursor: pointer;
+}
+.mid-des {
+  background-color: red;
+  margin-top: 4%;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(3, auto);
+}
+.mid-des-1 {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  font-size: 38px;
+  background-color: green;
+  font-family: 'HelveticaWorld';
+}
+.mid-des-2 {
+  margin-top: 1%;
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+  font-family: 'HelveticaWorld';
+  background-color: yellow;
+  width: 74%;
+  margin-left: 13%;
+  margin-right: 13%;
+  font-size: 20px;
+}
+.mid-des-3 {
+  grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
 }

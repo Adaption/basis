@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import logo from './img/logo_3.png';
 import './style.css';
-import scrollIcon from './icon/angle-down.svg';
 
 
 class Topbar extends Component {
@@ -86,10 +85,34 @@ class Topbackground extends Component {
 class Buttondownscroll extends Component {
   render() {
     return (
+      //scrolldown icon
       <div className="scrolldown-arrow">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
           <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
         </svg>
+      </div>
+    );
+  }
+}
+
+class Middledescription extends Component {
+  render() {
+    return (
+      <div className="mid-des">
+        <div className="mid-des-1">
+          BASIS - Giải pháp bạn cần để quản lý &amp; bán hàng tốt hơn
+        </div>
+        <div className="mid-des-2">
+          Chúng tôi mang đến cho bạn một trợ lý ảo đắc lực để phát triển thương mại điện tử
+        </div>
+        <div className="mid-des-3">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+        </div>
       </div>
     );
   }
@@ -104,6 +127,7 @@ class Homepage extends Component {
         <Topbuttontrial />
         <Topbackground />
         <Buttondownscroll />
+        <Middledescription />
       </div>
     );
   }
