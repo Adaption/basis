@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import logo from './img/logo_3.png';
+import solutionOne from './img/solution-item-1.png';
+import solutionTwo from './img/solution-item-2.png';
+import solutionThree from './img/solution-item-3.png';
 import './style.css';
 
 
@@ -95,7 +98,7 @@ class Buttondownscroll extends Component {
   }
 }
 
-class Middledescription extends Component {
+class Middlesolution extends Component {
   render() {
     return (
       <div className="mid-des">
@@ -107,10 +110,75 @@ class Middledescription extends Component {
         </div>
         <div className="mid-des-3">
           <div>
+            <div>
+              <img src={solutionOne} />
+              <h3>
+                BASIS POS
+              </h3>
+              <p>
+                Phần mềm quản lý bán hàng dễ dùng
+            <br />
+                cho cửa hàng và chuỗi cửa hàng
+            </p>
+            </div>
           </div>
           <div>
+            <div>
+              <img src={solutionTwo} />
+              <h3>
+                BASIS WEB
+              </h3>
+              <p>
+                Giải pháp thiết kế website bán hàng
+            <br />
+                chuẩn SEO, chuyên nghiệp
+            </p>
+            </div>
           </div>
           <div>
+            <div>
+              <img src={solutionThree} />
+              <h3>
+                BASIS OMNI CHANNEL
+              </h3>
+              <p>
+                Giải pháp quản lý và bán hàng đa kênh
+            <br />
+                toàn diện từ Online đến Offline
+            </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Middlebenefit extends Component {
+  render() {
+    return (
+      <div className="benefit">
+        <h2>
+          BASIS giúp bạn bán hàng đa kênh và quản lý
+        <br />
+          mọi hoạt động kinh doanh
+        </h2>
+        <div className="block-container">
+          <div className="block-index-1">
+            <div>
+              Xin chào
+            </div>
+            <div>
+              <img src="https://www.sapo.vn/Themes/Portal/Default/Styles_New/Images/index-home/block-index-1.png" />
+            </div>
+          </div>
+          <div className="block-index-2">
+            <div>
+              <img src="https://www.sapo.vn/Themes/Portal/Default/Styles_New/Images/index-home/block-index-2.png" />
+            </div>
+            <div>
+              Tạm biệt
+            </div>
           </div>
         </div>
       </div>
@@ -123,11 +191,14 @@ class Homepage extends Component {
     return (
       <div class="body">
         <Topbar />
-        <Topdescription />
-        <Topbuttontrial />
+        <div className="gray-background">
+          <Topdescription />
+          <Topbuttontrial />
+        </div>
         <Topbackground />
         <Buttondownscroll />
-        <Middledescription />
+        <Middlesolution />
+        <Middlebenefit />
       </div>
     );
   }
